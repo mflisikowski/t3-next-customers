@@ -1,9 +1,6 @@
-import { type GetServerSidePropsContext } from "next";
 import { type DefaultSession, type NextAuthOptions } from "next-auth";
 
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { getServerSession } from "next-auth";
-
 import GithubProvider from "next-auth/providers/github";
 
 import { env } from "@/env.mjs";
@@ -55,16 +52,4 @@ export const authOptions: NextAuthOptions = {
      */
   ],
   secret: env.NEXTAUTH_SECRET,
-};
-
-/**
- * Wrapper for `getServerSession` so that you don't need to import the `authOptions` in every file.
- *
- * @see https://next-auth.js.org/configuration/nextjs
- */
-export const getServerAuthSession = (ctx: {
-  req: GetServerSidePropsContext["req"];
-  res: GetServerSidePropsContext["res"];
-}) => {
-  return getServerSession(ctx.req, ctx.res, authOptions);
 };

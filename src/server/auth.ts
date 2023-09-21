@@ -52,4 +52,5 @@ export const authOptions: NextAuthOptions = {
      */
   ],
   secret: env.NEXTAUTH_SECRET,
+  debug: true,
 };

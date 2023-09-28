@@ -3,6 +3,8 @@ export const metadata = {
   description: "Next.js 13 T3 Stack with Prisma, TailwindCSS, and TypeScript",
 };
 import "@/styles/globals.css";
+import "@uploadthing/react/styles.css";
+
 import { Providers } from "@/app/providers";
 import { Montserrat } from "next/font/google";
 import React from "react";

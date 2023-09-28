@@ -11,6 +11,6 @@
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@/utils/tailwind-merge.ts"
+    "utils": "@/utils/tailwind-merge"
   }
 }

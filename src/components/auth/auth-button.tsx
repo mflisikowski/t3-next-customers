@@ -1,19 +1,25 @@
-import AuthButtonSignIn from "@/components/auth/auth-button-signin";
-import AuthButtonSignOut from "@/components/auth/auth-button-signout";
-
+import { buttonVariants } from "@/components/ui/button";
 import { authOptions } from "@/server/auth";
+import { cn } from "@/utils/tailwind-merge";
+import { type ClassValue } from "class-variance-authority/dist/types";
 import { getServerSession } from "next-auth";
+import Link from "next/link";
 
 export default async function AuthButton({
   className,
 }: {
-  className?: string;
+  className?: ClassValue;
 }) {
   const session = await getServerSession(authOptions);
+  const label = session ? `Sign out` : `Sign in`;
+  const href = session ? `signout` : `signin`;
 
-  return session ? (
-    <AuthButtonSignOut className={className} />
-  ) : (
-    <AuthButtonSignIn className={className} />
+  return (
+    <Link
+      className={cn(buttonVariants({ variant: "ghost" }), className)}
+      href={`/api/auth/${href}`}
+    >
+      {label}
+    </Link>
   );
 }

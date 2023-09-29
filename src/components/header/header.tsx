@@ -17,13 +17,9 @@ export default function Header() {
             <AuthButton />
           </div>
 
-          <div className="lg:flex lg:flex-1 lg:justify-end">
-            <div className="relative flex h-12 w-12 overflow-hidden rounded-full transition-shadow">
-              <AuthUserImage className="absolute top-0 block h-12 w-12 object-cover" />
-            </div>
-            <div className="ml-4">
-              <ThemeModeToggle />
-            </div>
+          <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-1">
+            <AuthUserImage />
+            <ThemeModeToggle />
           </div>
         </nav>
       </header>

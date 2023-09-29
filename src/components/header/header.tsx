@@ -1,6 +1,7 @@
 import AuthButton from "@/components/auth/auth-button";
 import AuthUserImage from "@/components/auth/auth-user-image";
 import Logo from "@/components/logo";
+import ThemeModeToggle from "@/components/theme-mode-toggle";
 
 export default function Header() {
   return (
@@ -16,6 +17,9 @@ export default function Header() {
           <div className="lg:flex lg:flex-1 lg:justify-end">
             <div className="relative flex h-12 w-12 overflow-hidden rounded-full transition-shadow">
               <AuthUserImage className="absolute top-0 block h-12 w-12 object-cover" />
+            </div>
+            <div className="ml-4">
+              <ThemeModeToggle />
             </div>
           </div>
         </nav>

@@ -2,16 +2,18 @@ import AuthButton from "@/components/auth/auth-button";
 import AuthUserImage from "@/components/auth/auth-user-image";
 import Logo from "@/components/logo";
 import ThemeModeToggle from "@/components/theme-mode-toggle";
+import { Separator } from "@/components/ui/separator";
 import NavigationMenu from "../navigation/navigation-menu";
 
 export default function Header() {
   return (
     <>
-      <header className="bg-white">
+      <header>
         <nav className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <Logo className="-m-1.5 p-1.5" />
           </div>
+
           <div className="lg:flex lg:gap-x-1">
             <NavigationMenu />
             <AuthButton />
@@ -23,6 +25,7 @@ export default function Header() {
           </div>
         </nav>
       </header>
+      <Separator />
     </>
   );
 }

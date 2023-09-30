@@ -48,6 +48,7 @@
     "prettier-plugin-tailwindcss": "^0.5.4",
     "prisma": "^5.3.1",
     "tailwindcss": "^3.3.3",
+    "tslog": "^4.9.2",
     "typescript": "^5.2.2"
   },
   "ct3aMetadata": {

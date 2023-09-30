@@ -1,10 +1,13 @@
 import { type DefaultSession, type NextAuthOptions } from "next-auth";
+import { Logger, type ILogObj } from "tslog";
 
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import GithubProvider from "next-auth/providers/github";
 
 import { env } from "@/env.mjs";
 import { prisma } from "@/server/prisma";
+
+const log = new Logger<ILogObj>();
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -52,5 +55,15 @@ export const authOptions: NextAuthOptions = {
      */
   ],
   secret: env.NEXTAUTH_SECRET,
-  debug: true,
+  logger: {
+    error(code, metadata) {
+      log.error(code, metadata);
+    },
+    warn(code) {
+      log.warn(code);
+    },
+    debug(code, metadata) {
+      log.debug(code, metadata);
+    },
+  },
 };
